@@ -27,3 +27,4 @@ codemeta = "../codemeta.json"
 version = extract_version_from_file(codemeta)
 
 from .search import search_on_title
+from .inspect_parquet import get_schema, inspect_parquet
