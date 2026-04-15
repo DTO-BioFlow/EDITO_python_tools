@@ -1,4 +1,4 @@
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import urlparse
 from urllib.request import url2pathname
 from collections import defaultdict
 from datetime import datetime
@@ -9,6 +9,7 @@ from typing import Any, Mapping
 import pyarrow.compute as pc
 import pyarrow.dataset as ds
 import pyarrow.fs as fs
+import pyarrow as pa
 
 
 DatasetInput = ds.Dataset | str
@@ -129,7 +130,7 @@ def _row_from_counts(
     ]
 
 
-def get_schema(dataset_url: DatasetInput, output_file: str | None = None) -> ds.Schema:
+def get_schema(dataset_url: DatasetInput, output_file: str | None = None) -> pa.Schema:
     """
     Print and return the parquet schema.
 

@@ -50,5 +50,6 @@ Inspect a parquet file
 This will result in
 
 .. code-block:: python
+
     column_name,column_type,unique_values
     parameter,string,"[{""value"": ""Detritus (#/l)"", ""count"": 27594}, {""value"": ""Diameter_sample_collector_aperture (cm)"", ""count"": 25644}, {""value"": ""Fibres (#/l)"", ""count"": 27594}, {""value"": ""LifeStage"", ""count"": 27552}, {""value"": ""Mesh_size (um)"", ""count"": 25644}, {""value"": ""Samp_vol (l)"", ""count"": 27540}, {""value"": ""sampling_instrument_name"", ""count"": 26007}, {""value"": ""sampling_platform_name"", ""count"": 27927}, {""value"": ""SubSamplingCoefficient (Dmnless)"", ""count"": 27429}, {""value"": ""unidentified_biota (#/l)"", ""count"": 27594}, {""value"": ""WaterAbund (#/ml)"", ""count"": 27582}]"
