@@ -18,3 +18,8 @@ search
    :members:
    :undoc-members:
    :show-inheritance:
+
+.. automodule:: dtotools.read_parquet_alt
+   :members:
+   :undoc-members:
+   :show-inheritance:
