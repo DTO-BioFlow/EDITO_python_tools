@@ -7,3 +7,4 @@ except PackageNotFoundError:
 
 from .search import search_on_title
 from .inspect_parquet import get_schema, inspect_parquet
+from .read_parquet import read_parquet
