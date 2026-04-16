@@ -13,3 +13,8 @@ search
    :members:
    :undoc-members:
    :show-inheritance:
+
+.. automodule:: dtotools.read_parquet
+   :members:
+   :undoc-members:
+   :show-inheritance:
