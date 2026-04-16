@@ -2,9 +2,14 @@ from pystac_client import Client
 from typing import Optional, List
 import pystac
 from datetime import datetime as dt
+from functools import lru_cache
 
 _COLLECTION_URL = "https://api.dive.edito.eu/data/collections"
-_catalog = Client.open(_COLLECTION_URL)
+
+
+@lru_cache(maxsize=1)
+def _get_catalog() -> Client:
+    return Client.open(_COLLECTION_URL)
 
 
 def get_collection_url() -> str:
@@ -81,18 +86,19 @@ def search_on_title(
     """
     results = []
     item_counter = 0
+    catalog = _get_catalog()
 
     if collection:
         if verbose > 0:
             print(f"{dt.now()} | loading collection: {collection}...")
-        col_client = _catalog.get_collection(collection)
+        col_client = catalog.get_collection(collection)
         if col_client is None:
             raise ValueError(f"Collection '{collection}' not found.")
         collections = [col_client]
     else:
         if verbose > 0:
             print(f"{dt.now()} | loading all collections...")
-        collections = list(_catalog.get_all_collections())
+        collections = list(catalog.get_all_collections())
 
     total_collections = len(collections)
 
