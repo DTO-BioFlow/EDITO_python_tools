@@ -1,5 +1,9 @@
-from importlib.metadata import version
-__version__ = version("your-package-name")
+from importlib.metadata import PackageNotFoundError, version
+
+try:
+	__version__ = version("dtotools")
+except PackageNotFoundError:
+	__version__ = "0.0.0"
 
 from .search import search_on_title
 from .inspect_parquet import get_schema, inspect_parquet
